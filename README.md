@@ -1,1 +1,2 @@
-# terraform_scripts
+
+Simple Terraform script to deploy VM in AWS
