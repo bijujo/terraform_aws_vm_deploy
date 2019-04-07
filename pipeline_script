@@ -1,0 +1,26 @@
+pipeline {
+     agent any
+
+     stages {
+     stage('checkout') {
+     steps {
+     git branch: 'master', url: 'https://github.com/bijujo/terraform_aws_vm_deploy.git'
+
+     }
+     }
+     stage('Set Terraform path') {
+     steps {
+     //script {
+     //def tfHome = tool name: 'Terraform'
+     //env.PATH = “${tfHome}:${env.PATH}”
+     //}
+     sh '/terraform/terraform --version'
+     sh '/terraform/terraform init'
+     sh '/terraform/terraform plan -out=plan'
+     sh '/terraform/terraform apply plan'
+
+     }
+     }
+     
+     }
+     }
