@@ -1,9 +1,9 @@
 # Create a new instance of the latest Ubuntu 14.04 on an
 # t2.micro node with an AWS Tag naming it "HelloWorld"
 provider "aws" {
-  access_key = "${var.aws_access_key}"
-  secret_key = "${var.aws_secret_key}"
-  region = "${var.aws_region}"
+  # access_key = "${var.aws_access_key}"
+  # secret_key = "${var.aws_secret_key}"
+  region = "us-east-1"
 }
 
 resource "aws_instance" "test" {
