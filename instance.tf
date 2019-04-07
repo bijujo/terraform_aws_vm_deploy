@@ -9,14 +9,14 @@ provider "aws" {
 resource "aws_instance" "test" {
   ami           = "ami-14c5486b"
   instance_type = "t2.micro"
-  key_name = "${aws_key_pair.mykey.key_name}"
+  #key_name = "${aws_key_pair.mykey.key_name}"
 
   tags {
     Name = "TESTVM"
   }
 }
 
-resource "aws_key_pair" "mykey" {
-  key_name = "testkey"
-  public_key = "${file("${var.public_key}")}"
-}
+# resource "aws_key_pair" "mykey" {
+#   key_name = "testkey"
+#   public_key = "${file("${var.public_key}")}"
+# }
